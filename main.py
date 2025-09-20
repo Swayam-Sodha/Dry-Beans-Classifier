@@ -7,6 +7,7 @@ scaler = joblib.load('beans_scaler.joblib')
 le = joblib.load('beans_label_encoder.joblib')
 
 st.title("Dry Beans Classifier")
+st.subheader("*By* :rainbow[Swayam Sodha]")
 st.write("Enter bean physical measurements:")
 
 # Example for dynamic inputs based on dataset features
@@ -20,3 +21,4 @@ if st.button('Predict'):
     x_scaled = scaler.transform(x)
     pred = model.predict(x_scaled)
     st.success(f'Predicted class: {le.inverse_transform(pred)[0]}')
+
